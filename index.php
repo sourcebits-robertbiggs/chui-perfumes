@@ -106,13 +106,13 @@
 			}); 
 
 			$('#available_perfumes').on('singletap', 'li', function() {
-				var genre = $(this).parent().dataset('genre');
-				var sku = $(this).dataset('sku');
+				var genre = $(this).parent().attr('data-genre');
+				var sku = $(this).attr('data-sku');
 				// Find item in array based on SKU from chosen item:
 				var chosenPerfume = $.perfumeData[genre].filter(function( obj ) {
   					return obj.sku === sku;
 				})[0];
-					// Update forward interface to user's choice:
+				// Update forward interface to user's choice:
 				$('#perfumeDetail').html(detailTmpl8(chosenPerfume));
 				$('#detailTitle').html(chosenPerfume.product_title);
 			});
