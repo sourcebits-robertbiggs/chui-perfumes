@@ -194,9 +194,23 @@
 			background: transparent url(images/perfume-bottle.png) no-repeat center center;
 			background-size: 80% auto;
 		}
-		.isAndroid.button.add::before,
+		.isAndroid .button.add,
+		.isDesktopChrome .button.add {
+			width: 28px;
+		}
+		.isAndroid .button.add::before,
 		.isDesktopChrome .button.add::before {
-			content: 'Add';
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			height: 28px;
+			width: 28px;
+		   background-position: 50% 50%;
+		   background-size: 90% 90%;
+		   background-repeat: no-repeat; 
+		   background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve"><path d="M36.729,21.049h-4.475h-2.645H28.17c-0.67,0-1.221-0.561-1.221-1.229v-1.623v-1.856v-5.07c0-0.668-0.541-1.21-1.211-1.21  H22.26c-0.668,0-1.21,0.542-1.21,1.21v5.07v2.016v1.464c0,0.668-0.553,1.229-1.222,1.229h-1.688h-2.396h-4.474  c-0.668,0-1.21,0.542-1.21,1.211v3.479c0,0.668,0.542,1.211,1.21,1.211h4.474h2.637h1.447c0.669,0,1.222,0.531,1.222,1.199v1.678  v1.801v5.102c0,0.668,0.542,1.211,1.21,1.211h3.479c0.67,0,1.211-0.543,1.211-1.211v-5.102v-1.84v-1.639  c0-0.668,0.551-1.199,1.221-1.199h1.799h2.285h4.475c0.668,0,1.211-0.543,1.211-1.211V22.26  C37.939,21.591,37.396,21.049,36.729,21.049z"/></svg>');
 		}
 		.isAndroid #shoppingCart {
 			width: 30px;
