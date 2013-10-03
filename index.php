@@ -5,7 +5,23 @@
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<title>Perfumes App</title>
-	<link rel="stylesheet" href="chui/chui.ios-3.0.4.min.css">   
+	<?php
+
+	$agent = $_SERVER['HTTP_USER_AGENT'];
+
+	if (preg_match("/android/i", $agent) || preg_match("/chrome/i", $agent))
+	 {
+		echo '<link rel="stylesheet" href="chui/chui.android-3.0.4.min.css">';
+	 }
+	 elseif (preg_match("/Trident/i", $agent))
+	 {
+		echo '<link rel="stylesheet" href="chui/chui.win-3.0.4.min.css">';
+	 }
+	 elseif (preg_match("/Safari/i", $agent))
+	 {
+		echo '<link rel="stylesheet" href="chui/chui.ios-3.0.4.min.css">';
+	 }
+	 ?>
 	<script type="text/javascript" src="chui/chocolatechip-3.0.4.min.js"></script>
 	<script src="chui/chui-3.0.4.min.js"></script>
 	<script>
@@ -22,7 +38,7 @@
 			// Data and output for first list of genres:
 			var genres = [{title: 'Ladies', genre: 'ladies'},{title: 'Men', genre: 'men'},{title: 'Kids', genre: 'kids'}];
 			genres.forEach(function(ctx) {
-				$('#perfumeGenres').append("<li class='nav' data-genre='" + ctx.genre +"' data-goto='perfumeList'>" + ctx.title +"</li>")
+				$('#perfumeGenres').append("<li class='nav' data-genre='" + ctx.genre +"' data-goto='perfumeList'><h3>" + ctx.title +"</h3></li>")
 			});
 
 			// Template for perfumes lists
@@ -219,8 +235,8 @@
 			display: block;
 			margin: 10px 0 0 5px;
 		}
-		.isWindows .button.add:hover::before {
-			color: #000;
+		.isWindows .buttonhover::before {
+			color: #000 !important;
 		}
 		.isWindows #shoppingCart::before {
 			content: '\E14D';
