@@ -11,19 +11,19 @@
 
 	if (preg_match("/android/i", $agent) || preg_match("/chrome/i", $agent))
 	 {
-		echo '<link rel="stylesheet" href="chui/chui.android-3.0.4.min.css">';
+		echo '<link rel="stylesheet" href="chui/chui-android-3.5.3.min.css">';
 	 }
 	 elseif (preg_match("/Trident/i", $agent))
 	 {
-		echo '<link rel="stylesheet" href="chui/chui.win-3.0.4.min.css">';
+		echo '<link rel="stylesheet" href="chui/chui-win-3.5.3.min.css">';
 	 }
 	 elseif (preg_match("/Safari/i", $agent))
 	 {
-		echo '<link rel="stylesheet" href="chui/chui.ios-3.0.4.min.css">';
+		echo '<link rel="stylesheet" href="chui/chui-ios-3.5.3.min.css">';
 	 }
 	 ?>
-	<script type="text/javascript" src="chui/chocolatechip-3.0.4.min.js"></script>
-	<script src="chui/chui-3.0.4.min.js"></script>
+	<script type="text/javascript" src="chui/jquery-2.1.0.js"></script>
+	<script src="chui/chui-3.5.3.min.js"></script>
 	<script>
 		$(function() {
 			$.perfumeData = {};
@@ -141,7 +141,7 @@
 			border-radius: 6px;
 			height: 30px;
 			width: 30px;
-			margin-top: 7px;
+			margin-top: 4px;
 		}
 
 		.isiOS .button.add::after,
